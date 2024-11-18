@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -12,19 +11,12 @@ public class Main {
         }
 
         for (int i = 0 ; i < S.length() ; i++) {
-            char c = S.charAt(i);
-            for (int j = 0 ; j < 26 ; j++) {
-                    if (c == 'a' + j && arr[j] == -1) {
-                        arr[j] = i;
-                        break;
-                    }
-            }
+        if (arr[S.charAt(i) - 'a'] != -1) continue;
+            arr[S.charAt(i) - 'a'] = i;
         }
 
         for (int i : arr) {
             System.out.print(i + " ");
         }
-
-
     }
 }
