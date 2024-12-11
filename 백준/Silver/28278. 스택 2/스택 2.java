@@ -9,7 +9,7 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         Stack<Integer> stk = new Stack<>();
-
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             int menu = Integer.parseInt(st.nextToken());
@@ -21,28 +21,29 @@ public class Main {
                     break;
                 case 2:
                     if (stk.isEmpty()) {
-                        System.out.println(-1);
+                        sb.append(-1+"\n");
                     } else {
-                        System.out.println(stk.pop());
+                        sb.append(stk.pop()+"\n");
                     }
                     break;
                 case 3:
-                    System.out.println(stk.size());
+                    sb.append(stk.size()+"\n");
                     break;
                 case 4:
-                    System.out.println(stk.isEmpty() ? 1 : 0);
+                    sb.append(stk.isEmpty() ? 1 : 0).append("\n");
                     break;
                 case 5:
                     if (stk.isEmpty()) {
-                        System.out.println(-1);
+                        sb.append(-1+"\n");
                     } else {
-                        System.out.println(stk.peek());
+                        sb.append(stk.peek()+"\n");
                     }
                     break;
                 default:
-                    System.out.println("잘못된 메뉴");
+                    sb.append("잘못된 메뉴"+"\n");
                     break;
             }
         }
+        System.out.println(sb);
     }
 }
