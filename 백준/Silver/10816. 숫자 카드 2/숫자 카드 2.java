@@ -20,11 +20,7 @@ public class Main {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < M; i++) {
             int qNum = Integer.parseInt(st2.nextToken());
-            if (card.containsKey(qNum)) {
-                sb.append(card.get(qNum)).append(" ");
-            } else {
-                sb.append(0).append(" ");
-            }
+            sb.append(card.getOrDefault(qNum, 0)).append(" ");
         }
         System.out.println(sb);
     }
