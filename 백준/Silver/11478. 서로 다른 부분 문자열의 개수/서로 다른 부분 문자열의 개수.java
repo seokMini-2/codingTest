@@ -9,12 +9,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String S = br.readLine();
         Set<String> set = new HashSet<>();
-        int cnt = 1;
-        for (int i = 0; i < S.length(); i++) {
-            for (int j = 0; j < S.length() - i; j++) {
-                set.add(S.substring(j, j + cnt));
+        for (int i = 1; i <= S.length(); i++) {
+            for (int j = 0; j <= S.length() - i; j++) {
+                set.add(S.substring(j, j + i));
             }
-            cnt++;
         }
         System.out.println(set.size());
     }
